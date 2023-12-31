@@ -30,6 +30,7 @@ def init_browser(request):
             "enableVideo": True
         }
     }
+    options.add_argument('--disable-blink-features=AutomationControlled')
     options.capabilities.update(selenoid_capabilities)
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
