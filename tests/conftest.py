@@ -30,14 +30,13 @@ def init_browser(request):
             "enableVideo": True
         }
     }
-    options.add_argument('--disable-blink-features=AutomationControlled')
     options.capabilities.update(selenoid_capabilities)
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
     remote_url = request.config.getoption('--remote_url')
     driver = webdriver.Remote(
         # command_executor=f"https://{login}:{password}@{remote_url}",
-        command_executor=f"https://127.0.0.1:4444/wd/hub",
+        command_executor=f"http://172.17.0.1:4444/wd/hub",
         options=options
     )
 
