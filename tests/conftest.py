@@ -36,7 +36,7 @@ def init_browser(request):
     remote_url = request.config.getoption('--remote_url')
     driver = webdriver.Remote(
         # command_executor=f"https://{login}:{password}@{remote_url}",
-        command_executor=f"http://127.0.0.1:4444/wd/hub",
+        command_executor=f"https://127.0.0.1:4444/wd/hub",
         options=options
     )
 
